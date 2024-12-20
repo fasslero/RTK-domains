@@ -1,0 +1,130 @@
+<html><head><title>ROR</title>
+<link href="../style.css" rel="stylesheet" type="text/css"/>
+</head><body>
+<div class="hover-preview" id="hover-preview"></div>
+<style>
+.hover-preview {
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+    z-index: 1000;
+}
+</style>
+<script>
+    const hoverPreview = document.getElementById('hover-preview');
+    document.querySelectorAll('.structure-link').forEach(link => {
+        link.addEventListener('mouseover', event => {
+            const pdbFileUrl = event.target.getAttribute('data-pdb-url');
+            hoverPreview.style.display = 'block';
+            hoverPreview.style.left = `${event.pageX + 10}px`;
+            hoverPreview.style.top = `${event.pageY + 10}px`;
+            
+            // Create a new iframe dynamically
+            const iframe = document.createElement('iframe');
+            iframe.src = `http://chemapps.stolaf.edu/jmol/jmol.php?source=${pdbFileUrl}`;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            
+            // Clear any previous content and append the new iframe
+            hoverPreview.innerHTML = '';
+            hoverPreview.appendChild(iframe);
+        });
+        link.addEventListener('mousemove', event => {
+            hoverPreview.style.left = `${event.pageX + 10}px`;
+            hoverPreview.style.top = `${event.pageY + 10}px`;
+        });
+        link.addEventListener('mouseout', () => {
+            hoverPreview.style.display = 'none';
+            hoverPreview.innerHTML = ''; // Remove the iframe
+        });
+    });
+</script>
+<div class="hover-preview" id="hover-preview"></div>
+<style>
+.hover-preview {
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+    z-index: 1000;
+}
+.hover-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
+<script>
+    const hoverPreview = document.getElementById('hover-preview');
+    document.querySelectorAll('.structure-link').forEach(link => {
+        link.addEventListener('mouseover', event => {
+            const pdbFileUrl = event.target.getAttribute('data-pdb-url');
+            hoverPreview.style.display = 'block';
+            hoverPreview.style.left = `${event.pageX + 10}px`;
+            hoverPreview.style.top = `${event.pageY + 10}px`;
+            hoverPreview.innerHTML = `<iframe src='http://chemapps.stolaf.edu/jmol/jmol.php?source=${pdbFileUrl}'></iframe>`;
+        });
+        link.addEventListener('mousemove', event => {
+            hoverPreview.style.left = `${event.pageX + 10}px`;
+            hoverPreview.style.top = `${event.pageY + 10}px`;
+        });
+        link.addEventListener('mouseout', () => {
+            hoverPreview.style.display = 'none';
+            hoverPreview.innerHTML = '';
+        });
+    });
+</script>
+<header><h1>ROR</h1></header><main><table><tr><th>Domain ID</th><th>RTK Name</th><th>AlphaFold 2</th><th>Ligand Interaction</th><th>3D Fold</th><th>UniProt</th><th>Structure View</th></tr><tr><td><a class="structure-link" data-pdb-url="https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR1-A1.pdb" download="" href="../pdb_files/all_pdbs/ROR1-A1.pdb">ROR1-A1</a></td><td>ROR</td><td>YES</td><td>Unk</td><td>Ig-like (Roszmusz, Patthy et al. 2001)</td><td><a href="https://www.uniprot.org/uniprotkb/Q01973/entry" target="_blank">Q01973</a></td><td><a href="http://chemapps.stolaf.edu/jmol/jmol.php?source=https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR1-A1.pdb&amp;script=select%20all;cartoons%20only;color%20cartoons%20structure;" target="_blank">3D view</a></td></tr><tr><td><a class="structure-link" data-pdb-url="https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR1-A2.pdb" download="" href="../pdb_files/all_pdbs/ROR1-A2.pdb">ROR1-A2</a></td><td>ROR</td><td>YES</td><td>Unk</td><td>Frizzled (Roszmusz, Patthy et al. 2001)</td><td><a href="https://www.uniprot.org/uniprotkb/Q01973/entry" target="_blank">Q01973</a></td><td><a href="http://chemapps.stolaf.edu/jmol/jmol.php?source=https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR1-A2.pdb&amp;script=select%20all;cartoons%20only;color%20cartoons%20structure;" target="_blank">3D view</a></td></tr><tr><td><a class="structure-link" data-pdb-url="https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR1-A3.pdb" download="" href="../pdb_files/all_pdbs/ROR1-A3.pdb">ROR1-A3</a></td><td>ROR</td><td>YES</td><td>Unk</td><td>Kringle (Roszmusz, Patthy et al. 2001)</td><td><a href="https://www.uniprot.org/uniprotkb/Q01973/entry" target="_blank">Q01973</a></td><td><a href="http://chemapps.stolaf.edu/jmol/jmol.php?source=https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR1-A3.pdb&amp;script=select%20all;cartoons%20only;color%20cartoons%20structure;" target="_blank">3D view</a></td></tr><tr><td><a class="structure-link" data-pdb-url="https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR2-B1.pdb" download="" href="../pdb_files/all_pdbs/ROR2-B1.pdb">ROR2-B1</a></td><td>ROR2</td><td>YES</td><td>Unk</td><td>Ig-like (Roszmusz, Patthy et al. 2001)</td><td><a href="https://www.uniprot.org/uniprotkb/Q01974/entry" target="_blank">Q01974</a></td><td><a href="http://chemapps.stolaf.edu/jmol/jmol.php?source=https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR2-B1.pdb&amp;script=select%20all;cartoons%20only;color%20cartoons%20structure;" target="_blank">3D view</a></td></tr><tr><td><a class="structure-link" data-pdb-url="https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR2-B2.pdb" download="" href="../pdb_files/all_pdbs/ROR2-B2.pdb">ROR2-B2</a></td><td>ROR2</td><td>YES</td><td>Unk</td><td>Frizzled (Roszmusz, Patthy et al. 2001)</td><td><a href="https://www.uniprot.org/uniprotkb/Q01974/entry" target="_blank">Q01974</a></td><td><a href="http://chemapps.stolaf.edu/jmol/jmol.php?source=https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR2-B2.pdb&amp;script=select%20all;cartoons%20only;color%20cartoons%20structure;" target="_blank">3D view</a></td></tr><tr><td><a class="structure-link" data-pdb-url="https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR2-B3.pdb" download="" href="../pdb_files/all_pdbs/ROR2-B3.pdb">ROR2-B3</a></td><td>ROR2</td><td>YES</td><td>Unk</td><td>Kringle (Roszmusz, Patthy et al. 2001)</td><td><a href="https://www.uniprot.org/uniprotkb/Q01974/entry" target="_blank">Q01974</a></td><td><a href="http://chemapps.stolaf.edu/jmol/jmol.php?source=https://fasslero.github.io/RTK-domains/final_website_with_updated_titles/pdb_files/all_pdbs/ROR2-B3.pdb&amp;script=select%20all;cartoons%20only;color%20cartoons%20structure;" target="_blank">3D view</a></td></tr></table><button onclick="window.location.href='../index.html'">Back to Main Page</button></main><footer>Copyright © 2024 Anna Fassler Bakhman</footer>
+<style>
+/* Floating window styling */
+.floating-window {
+    display: none; /* Hidden by default */
+    position: absolute;
+    z-index: 1000;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+.floating-window iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
+<div class="floating-window" id="floating-window"></div>
+<script>
+document.querySelectorAll('td:last-child .structure-link').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const floatingWindow = document.getElementById('floating-window');
+        const iframe = document.createElement('iframe');
+        iframe.src = link.href; // Set the iframe source to the link's href
+        floatingWindow.innerHTML = ''; // Clear previous content
+        floatingWindow.appendChild(iframe); // Add the new iframe
+        floatingWindow.style.display = 'block';
+        
+        // Position the floating window to the left of the link
+        const rect = link.getBoundingClientRect();
+        floatingWindow.style.top = `${rect.top + window.scrollY}px`;
+        floatingWindow.style.left = `${rect.left - 420}px`; // Position 20px to the left of the link
+    });
+});
+window.addEventListener('click', event => {
+    const floatingWindow = document.getElementById('floating-window');
+    if (!event.target.closest('#floating-window') && !event.target.classList.contains('structure-link')) {
+        floatingWindow.style.display = 'none';
+        floatingWindow.innerHTML = ''; // Clear content
+    }
+});
+</script>
+</body></html>

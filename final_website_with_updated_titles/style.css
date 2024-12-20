@@ -148,3 +148,20 @@ table tr:hover {
     background-color: #f0f8ff; /* Light blue highlight */
     cursor: pointer;
 }
+
+
+/* Set pointer style to default */
+table td:nth-child(2), /* RTK Name */
+table td:nth-child(3), /* AlphaFold 2 */
+table td:nth-child(4), /* Ligand Interaction */
+table td:nth-child(5), /* 3D Fold */
+table td:nth-child(6), /* UniProt */
+table.index td:nth-child(2) { /* Receptors column in index */
+    cursor: default;
+}
+
+
+/* Center align the text in the Structure View column */
+table td:nth-child(7) {
+    text-align: center;
+}
